@@ -1,6 +1,7 @@
 import React from 'react';
 
-const useForm = (initialValue) =>v{
+const useForm = (initialValue) => {
+
     const [values, setValues] = useState(initialValue);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
@@ -8,15 +9,16 @@ const useForm = (initialValue) =>v{
         setValues({
             ...values,
             [e.target.name]: e.target.value
-}
-    }
-const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowSuccessMessage(true);
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setShowSuccessMessage(true);
+    };
+
+    return [values, handleChanges, handleSubmit, showSuccessMessage];
+
 };
 
-return [values, handleChanges, handleSubmit, showSuccessMessage];
-
-};
-
-export default useForm;
+export default useForm; 
